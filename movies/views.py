@@ -61,6 +61,6 @@ def update_review(request, review_id):
 def delete_review(request, review_id):
     review_data = get_object_or_404(Review, pk=review_id, user=request.user)
     review_data.delete()
-    return redirect('detail', review_data.id)
+    return redirect('detail', review_data.movie.id)
 
 
